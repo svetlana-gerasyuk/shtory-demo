@@ -4,12 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Пошив штор на заказ в Москве и области (демоверсия)</title>
-<meta name="description" content="Демоверсия лендинга: индивидуальный пошив штор в Москве и Московской области. Виды штор, примеры оформления окон, этапы работы и форма заявки.">
+<!-- сайт задуман светлым: просим мобильные браузеры не включать автоматическую тёмную тему -->
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#f1ece3">
+<meta name="darkreader-lock">
+<title>Пошив штор на заказ в Москве и области</title>
+<meta name="description" content="Индивидуальный пошив штор в Москве и Московской области. Виды штор, примеры оформления окон, этапы работы и форма заявки.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Пошив штор на заказ в Москве и области">
-<meta property="og:description" content="Демоверсия лендинга: виды штор, примеры оформления окон, этапы работы и заявка.">
+<meta property="og:description" content="Виды штор, примеры оформления окон, этапы работы и заявка.">
 <meta property="og:image" content="https://svetlana-gerasyuk.github.io/shtory-demo/assets/og.jpg">
 <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high" media="(min-width: 861px)">
 <link rel="preload" as="image" href="assets/hero-m.webp" fetchpriority="high" media="(max-width: 860px)">
@@ -41,7 +46,7 @@
     --error: #9c3524;
     --bar-h: 4.25rem;
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: only light; }
   html, body { background: #f1ece3; }
   .v-page [id] { scroll-margin-top: calc(var(--bar-h) + 1rem); }
   .v-page .v-display { line-height: 1.04; }
@@ -80,13 +85,6 @@
     .bar__nav .v-btn { margin-top: var(--v-5); justify-content: center; font-size: var(--v-t-base); padding: 1em; }
   }
 
-  /* ---- плашка демоверсии ------------------------------------------------ */
-  .demo-tag { position: fixed; left: var(--v-gutter); bottom: 1rem; z-index: 35;
-    font-size: var(--v-t-xs); line-height: 1.3; padding: .5rem .8rem; border-radius: var(--v-radius);
-    background: var(--v-ink); color: var(--v-canvas); box-shadow: var(--v-e1); max-width: calc(100vw - 2 * var(--v-gutter)); }
-
-  @media (max-width: 860px) { .demo-tag { bottom: .6rem; padding: .35rem .65rem; } .demo-tag span { display: none; } }
-
   /* ---- первый экран ------------------------------------------------------ */
   .hero__stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 46vw); grid-template-rows: 100%; }
   .hero__scrim { display: none; }
@@ -96,14 +94,9 @@
   .hero__copy .v-lede { max-width: 30ch; color: var(--v-ink-soft); }
   .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-5); margin-top: var(--v-3); }
   .hero__more { font-size: var(--v-t-sm); display: inline-block; padding-block: .7rem; }
-  /* персональная пометка для заказчика над заголовком */
-  .hero__note { align-self: flex-start; max-width: 31rem; padding: .7rem 1rem .8rem; border-radius: var(--v-radius);
-    background: color-mix(in oklab, var(--v-surface) 86%, transparent); box-shadow: inset 0 0 0 1px rgb(90 76 52 / .13); }
-  .v-page .hero__note p { margin: 0; }
-  .hero__note-title { font-family: var(--v-font-display); font-size: 1.05rem; line-height: 1.3; color: var(--v-ink); text-wrap: balance; }
-  .hero__note-title a { color: var(--v-accent); white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; padding-block: .45rem; }
-  .hero__note-title a:hover { text-decoration-thickness: 2px; }
-  .hero__note-text { margin-top: .3rem !important; font-size: .82rem; line-height: 1.45; color: var(--v-ink-soft); }
+  .hero__contact { font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .hero__contact a { color: var(--v-ink); font-weight: 500; white-space: nowrap; text-decoration: none; border-bottom: 1px solid var(--v-hair-strong); padding-block: .2rem; }
+  .hero__contact a:hover { border-bottom-color: var(--v-ink); }
   .hero__photo { position: relative; overflow: hidden; background: #d9d1c2; }
   .hero__photo .v-layer img { position: absolute; max-width: none; width: 100%; height: 114%; top: -7%; left: 0; object-fit: cover; object-position: 50% 40%; }
   /* фирменный ход: шторы раздвигаются один раз при загрузке */
@@ -125,9 +118,7 @@
     .hero__copy h1 { font-size: clamp(2.3rem, 10.5vw, 3.1rem); max-width: 12ch; }
     .hero__copy .v-lede { font-size: var(--v-t-base); color: var(--v-ink); max-width: 34ch; }
     .hero__cta { margin-top: 0; gap: var(--v-4); }
-    .hero__note { max-width: 100%; padding: .6rem .8rem .7rem; background: color-mix(in oklab, var(--v-surface) 92%, transparent); }
-    .hero__note-title { font-size: 1rem; }
-    .hero__note-text { font-size: .76rem; }
+    .hero__contact { font-size: var(--v-t-sm); margin-top: 0; }
   }
 
   /* ---- виды штор ---------------------------------------------------------- */
@@ -243,6 +234,8 @@
   .foot { border-top: 1px solid var(--v-hair-strong); padding-block: var(--v-7) calc(var(--v-8) + 1rem); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
   .foot__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-6); }
   .foot strong { display: block; font-family: var(--v-font-display); font-weight: 400; font-size: 1.5rem; color: var(--v-ink); margin-bottom: var(--v-2); }
+  .foot__demo { grid-column: 1 / -1; justify-self: start; font-size: var(--v-t-xs); padding: .35rem .75rem; border-radius: var(--v-radius);
+    background: color-mix(in oklab, var(--v-accent) 9%, transparent); color: var(--v-accent); }
   @media (max-width: 700px) { .foot__in { grid-template-columns: 1fr; } }
 
   @media (prefers-reduced-motion: reduce) {
@@ -268,23 +261,18 @@
     </nav>
   </header>
 
-  <p class="demo-tag">Демоверсия<span> сайта. Данные формы не отправляются.</span></p>
-
   <main>
     <!-- 1. первый экран -->
     <section id="top" data-v-act="pin" data-v-span="1.25" data-v-drift="#f1ece3">
       <div data-v-stage class="hero__stage">
         <div class="hero__copy" data-v-cue="0 1 0 0">
-          <div class="hero__note">
-            <p class="hero__note-title">Персональная демоверсия для заказа на Kwork <a href="https://kwork.ru/projects/3266305/view" target="_blank" rel="noopener">№3266305</a></p>
-            <p class="hero__note-text">Предварительный вариант сайта, подготовленный по вашему техническому заданию. Дизайн и содержание можно адаптировать под вашу компанию.</p>
-          </div>
           <h1 class="v-display" data-v-kinetic="lines">Пошив штор на заказ в Москве и области</h1>
           <p class="v-lede">Шторы по размерам вашего окна: от выбора ткани до готового изделия.</p>
           <div class="hero__cta">
             <a class="v-btn" href="#zayavka" data-v-magnet="0.2" data-v-rise="0">Оставить заявку</a>
             <a class="hero__more" href="#vidy">Посмотреть виды штор</a>
           </div>
+          <p class="hero__contact">Москва и область · <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
         </div>
         <div class="hero__photo">
           <div class="v-layer" data-v-parallax="-0.5">
@@ -305,7 +293,7 @@
       <div class="v-wrap">
         <div class="head" data-v-in data-v-stagger="70">
           <h2 class="v-display">Виды штор</h2>
-          <p class="note">Перечень демонстрационный. В рабочей версии здесь будут те шторы, которые шьёт ателье, с ценами и сроками.</p>
+          <p class="note">Основные виды штор. Ткань, размер и фасон уточняются при замере.</p>
         </div>
         <div class="types">
           <div class="types__list" role="tablist" aria-label="Виды штор" aria-orientation="vertical">
@@ -353,7 +341,7 @@
           <div class="rail__lead">
             <h2 class="v-display">Примеры оформления окон</h2>
             <p class="v-body">Шторы для разных комнат: гостиная, спальня, детская, кухня-столовая и кабинет.</p>
-            <p class="note">Фотографии демонстрационные, из открытого фотобанка Unsplash. Это не выполненные заказы ателье.</p>
+            <p class="note">Фотографии из открытого фотобанка Unsplash. Это не выполненные работы.</p>
           </div>
           <figure class="shot">
             <img src="assets/primer-1.webp" alt="Современная гостиная: светлый тюль и кремовые портьеры на высоких окнах" loading="lazy" width="1950" height="1300">
@@ -392,7 +380,7 @@
         <div>
           <div class="head" data-v-in data-v-stagger="70" style="margin-bottom:0">
             <h2 class="v-display">Этапы работы</h2>
-            <p class="note">Схема типовая. Сроки, условия замера, доставки и монтажа ателье впишет само.</p>
+            <p class="note">Сроки, замер и монтаж согласуются при заявке.</p>
           </div>
           <ol class="steps__list">
             <li class="step">
@@ -422,12 +410,12 @@
         <div class="req__side" data-v-in data-v-stagger="70">
           <h2 class="v-display">Оставьте заявку на пошив штор</h2>
           <p class="v-body">Напишите, какое окно нужно оформить. Если размеров пока нет, достаточно имени и телефона.</p>
-          <p class="note">Телефон, адрес и часы работы ателье появятся здесь после согласования с заказчиком.</p>
+          <p class="note">Телефон: +7 (000) 000-00-00 (условный номер для примера).</p>
           <img src="assets/tkani.webp" alt="Образцы тканей и складки светлой шторы крупным планом" loading="lazy" width="1000" height="800">
         </div>
 
         <form class="form" id="form" novalidate data-v-in data-v-in-self>
-          <p class="form__demo" id="form-demo">Это демоверсия. Форма проверяет ввод, но заявка никуда не отправляется и нигде не сохраняется.</p>
+          <p class="form__demo" id="form-demo">Это пример работы формы. Она проверяет ввод, но данные никуда не отправляются и нигде не сохраняются.</p>
 
           <div class="field">
             <label for="f-name">Имя</label>
@@ -437,7 +425,7 @@
 
           <div class="field">
             <label for="f-tel">Телефон</label>
-            <input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required aria-describedby="e-tel">
+            <input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (000) 000-00-00" required aria-describedby="e-tel">
             <p class="field__err" id="e-tel" role="alert"></p>
           </div>
 
@@ -462,7 +450,7 @@
           <div class="field">
             <label class="check" for="f-ok">
               <input id="f-ok" name="ok" type="checkbox" required aria-describedby="e-ok">
-              <span>Согласен на обработку персональных данных. Текст согласия и политику добавит заказчик.</span>
+              <span>Согласен на обработку персональных данных. Это пример: текст согласия здесь не опубликован.</span>
             </label>
             <p class="field__err" id="e-ok" role="alert"></p>
           </div>
@@ -470,9 +458,8 @@
           <button class="v-btn" type="submit">Оставить заявку</button>
 
           <div class="form__done" id="form-done" tabindex="-1" aria-live="polite">
-            <h3>Форма заполнена верно</h3>
-            <p>Это демоверсия, поэтому заявка не отправлена и нигде не сохранена. В рабочей версии она придёт в ателье.</p>
-            <dl id="form-sum"></dl>
+            <h3>Это пример работы формы</h3>
+            <p>Данные проверены, но не отправлены и нигде не сохранены. Поля очищены.</p>
             <button class="v-btn v-btn--ghost" type="button" id="form-again">Заполнить ещё раз</button>
           </div>
         </form>
@@ -483,7 +470,8 @@
   <footer class="foot">
     <div class="v-wrap foot__in">
       <p><strong>Шторы на заказ</strong>Индивидуальный пошив штор. Москва и Московская область.</p>
-      <p>Демоверсия лендинга по заказу на Kwork. Название компании, цены, контакты, отзывы и фото работ добавляются после согласования с заказчиком. Фотографии на странице демонстрационные.</p>
+      <p class="foot__demo">Демонстрационный проект</p>
+      <p>Название, контакты, цены и отзывы условные. Фотографии на странице демонстрационные.</p>
     </div>
   </footer>
 </div>
@@ -540,7 +528,7 @@
 
   // Форма: проверка ввода. Демоверсия: данные никуда не отправляются и не сохраняются.
   (function () {
-    var form = document.getElementById('form'), done = document.getElementById('form-done'), sum = document.getElementById('form-sum');
+    var form = document.getElementById('form'), done = document.getElementById('form-done');
     var f = { name: form.elements.name, tel: form.elements.tel, msg: form.elements.msg, ok: form.elements.ok, type: form.elements.type };
     function digits(v) { return v.replace(/\D/g, ''); }
     // Цифры номера без кода страны: «+7…», «8…» и «7…» в начале считаем кодом.
@@ -591,20 +579,14 @@
       f[key].addEventListener('input', function () { if (f[key].hasAttribute('aria-invalid')) check(key); });
       f[key].addEventListener('change', function () { if (f[key].hasAttribute('aria-invalid')) check(key); });
     });
-    function row(k, v) {
-      var dt = document.createElement('dt'), dd = document.createElement('dd');
-      dt.textContent = k; dd.textContent = v; sum.appendChild(dt); sum.appendChild(dd);
-    }
+    // Пример работы формы: ввод проверен, но данные никуда не уходят и не сохраняются.
+    // После показа пояснения поля очищаются, чтобы введённое не оставалось на странице.
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var bad = Object.keys(rules).filter(function (k) { return !check(k); });
       if (bad.length) { f[bad[0]].focus(); return; }
-      sum.textContent = '';
-      row('Имя', f.name.value.trim());
-      row('Телефон', f.tel.value);
-      row('Шторы', f.type.value || 'нужна подсказка');
-      if (f.msg.value.trim()) row('Комментарий', f.msg.value.trim());
       form.classList.add('is-done');
+      form.reset();
       done.focus();
     });
     document.getElementById('form-again').addEventListener('click', function () {
